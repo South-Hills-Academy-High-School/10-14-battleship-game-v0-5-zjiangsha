@@ -7,8 +7,12 @@ function makeBoatVisible (boatArray: Sprite[]) {
     }
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    cursor.setFlag(SpriteFlag.Invisible, false)
-    moveBoatFlag = 0
+    if (currentBoat == 2) {
+        cursor.setFlag(SpriteFlag.Invisible, false)
+        moveBoatFlag = 0
+    } else {
+        currentBoat += 1
+    }
 })
 function moveBoat (boatArray: any[]) {
     let list: string[] = []
